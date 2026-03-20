@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sungur Zahid Erdim - Yazilim Muhendisi</title>
+<meta name="description" content="Yazılım Mühendisi - Yapay zeka araçları, otomasyon ve geliştirici altyapısı. Go, Python, Flutter.">
+<meta property="og:title" content="Sungur Zahid Erdim - Yazılım Mühendisi">
+<meta property="og:description" content="Yapay zeka araçları, otomasyon ve geliştirici altyapısı. Go, Python, Flutter.">
+<meta property="og:type" content="profile">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --primary: #1e293b;
+    --primary-mid: #334155;
+    --accent: #1e4d8c;
+    --accent-soft: #bdd0e8;
+    --accent-bg: #e2ecf6;
+    --highlight: #b45309;
+    --text: #1e293b;
+    --text-body: #334155;
+    --text-muted: #64748b;
+    --text-faint: #94a3b8;
+    --org-color: #475569;
+    --date-bg: #e2ecf6;
+    --date-border: #b3c9e2;
+    --date-text: #1a4273;
+    --border: #e2e8f0;
+    --border-light: #f1f5f9;
+    --summary-bg: #f8fafc;
+    --white: #ffffff;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, system-ui, sans-serif;
+    font-size: 9.5pt;
+    line-height: 1.45;
+    color: var(--text);
+    background: #cbd5e1;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-optical-sizing: auto;
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 11mm 14mm 8mm 14mm;
+    margin: 24px auto;
+    background: var(--white);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05), 0 8px 32px rgba(0,0,0,0.08);
+  }
+
+  /* ---- Header ---- */
+  .header {
+    text-align: center;
+    padding-bottom: 10pt;
+    margin-bottom: 10pt;
+    position: relative;
+  }
+
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 15%;
+    right: 15%;
+    height: 1.5pt;
+    background: linear-gradient(90deg, transparent, var(--accent), var(--primary), var(--accent), transparent);
+    border-radius: 1pt;
+  }
+
+  .header h1 {
+    font-size: 25pt;
+    font-weight: 800;
+    color: var(--primary);
+    letter-spacing: -0.6pt;
+    margin-bottom: 2pt;
+  }
+
+  .header .subtitle {
+    font-size: 10.5pt;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 2pt;
+    text-transform: uppercase;
+    margin-bottom: 7pt;
+  }
+
+  .contact-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6pt;
+    flex-wrap: wrap;
+  }
+
+  .contact-chip {
+    font-size: 8pt;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 2pt 7pt;
+    border-radius: 3pt;
+    background: var(--border-light);
+    border: 0.5pt solid var(--border);
+    transition: all 0.15s;
+  }
+
+  a.contact-chip:hover {
+    background: var(--accent-bg);
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  /* ---- Sections ---- */
+  .section { margin-bottom: 9pt; }
+
+  .section-title {
+    font-size: 8pt;
+    font-weight: 800;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 2pt;
+    padding-bottom: 3pt;
+    margin-bottom: 6pt;
+    border-bottom: 1pt solid var(--border);
+    position: relative;
+  }
+
+  .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -1pt;
+    left: 0;
+    width: 24pt;
+    height: 1.5pt;
+    background: var(--accent);
+    border-radius: 1pt;
+  }
+
+  /* ---- Summary ---- */
+  .summary-body {
+    background: var(--summary-bg);
+    border-left: 2.5pt solid var(--accent);
+    padding: 6pt 10pt;
+    border-radius: 0 3pt 3pt 0;
+  }
+
+  .summary-body p {
+    font-size: 9.5pt;
+    color: var(--text-body);
+    line-height: 1.55;
+  }
+
+  .summary-body strong {
+    font-weight: 500;
+    font-style: italic;
+    color: #1a56a8;
+  }
+
+  /* ---- Skills ---- */
+  .skills-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 4pt;
+  }
+
+  .skill-row {
+    display: flex;
+    align-items: first baseline;
+    gap: 6pt;
+  }
+
+  .skill-cat {
+    font-weight: 700;
+    color: var(--primary);
+    font-size: 8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.3pt;
+    min-width: 95pt;
+    flex-shrink: 0;
+    padding-top: 1pt;
+  }
+
+  .skill-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3pt;
+  }
+
+  .skill-pill {
+    font-size: 7.5pt;
+    font-weight: 600;
+    color: var(--primary);
+    background: var(--border-light);
+    border: 0.5pt solid var(--border);
+    padding: 2pt 7pt;
+    border-radius: 3pt;
+    white-space: nowrap;
+  }
+
+  /* ---- Experience ---- */
+  .exp-list {
+    position: relative;
+    padding-left: 13pt;
+  }
+
+  .exp-list::before {
+    content: '';
+    position: absolute;
+    left: 2pt;
+    top: 4pt;
+    bottom: 4pt;
+    width: 1.5pt;
+    background: var(--border);
+    border-radius: 1pt;
+  }
+
+  .exp-entry {
+    margin-bottom: 7pt;
+    position: relative;
+  }
+
+  .exp-entry::before {
+    content: '';
+    position: absolute;
+    left: -13pt;
+    top: 0.6em;
+    transform: translateY(-50%);
+    width: 5pt;
+    height: 5pt;
+    background: var(--accent);
+    border: 1.5pt solid var(--white);
+    border-radius: 50%;
+    box-shadow: 0 0 0 1pt var(--accent);
+    z-index: 1;
+  }
+
+  .exp-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 6pt;
+  }
+
+  .exp-role {
+    font-weight: 700;
+    font-size: 9.5pt;
+    color: var(--primary);
+  }
+
+  .exp-date {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 7pt;
+    font-weight: 500;
+    color: var(--date-text);
+    white-space: nowrap;
+    letter-spacing: -0.2pt;
+    padding: 1.5pt 6pt;
+    border-radius: 3pt;
+    background: var(--date-bg);
+    border: 0.5pt solid var(--date-border);
+    width: 18ch;
+    text-align: center;
+    box-sizing: content-box;
+  }
+
+  .exp-org {
+    font-size: 8.5pt;
+    color: var(--org-color);
+    font-weight: 500;
+    font-style: italic;
+    margin-bottom: 2pt;
+  }
+
+  .exp-bullets {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .exp-bullets li {
+    font-size: 9pt;
+    color: var(--text-body);
+    padding-left: 10pt;
+    position: relative;
+    margin-bottom: 1.5pt;
+    line-height: 1.45;
+  }
+
+  .exp-bullets strong {
+    font-weight: 500;
+    font-style: italic;
+    color: #1a56a8;
+  }
+
+  .exp-bullets li::before {
+    content: '';
+    position: absolute;
+    left: 1pt;
+    top: 0.68em;
+    transform: translateY(-50%);
+    width: 3.5pt;
+    height: 3.5pt;
+    background: var(--accent);
+    border-radius: 50%;
+    opacity: 0.5;
+  }
+
+  /* ---- Education ---- */
+  .edu-grid {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    row-gap: 3pt;
+    column-gap: 10pt;
+    align-items: baseline;
+  }
+
+  .edu-info {
+    display: flex;
+    align-items: baseline;
+    gap: 5pt;
+  }
+
+  .edu-degree {
+    font-weight: 700;
+    font-size: 9pt;
+    color: var(--text);
+  }
+
+  .edu-sep {
+    color: var(--text-faint);
+    font-size: 8pt;
+  }
+
+  .edu-school {
+    font-size: 9pt;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+
+  .edu-year {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 7pt;
+    font-weight: 500;
+    color: var(--date-text);
+    background: var(--date-bg);
+    border: 0.5pt solid var(--date-border);
+    padding: 1.5pt 6pt;
+    border-radius: 3pt;
+  }
+
+  .cert {
+    font-size: 8pt;
+    color: var(--text-muted);
+    margin-top: 5pt;
+    padding-top: 4pt;
+    border-top: 0.5pt solid var(--border-light);
+    font-weight: 500;
+  }
+
+  /* ---- Print ---- */
+  @media print {
+    body { background: var(--white); font-size: 9pt; }
+
+    .page {
+      width: 100%;
+      height: 297mm;
+      padding: 8mm 12mm 8mm 12mm;
+      min-height: auto;
+      box-shadow: none;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .section { margin-bottom: auto; page-break-inside: avoid; }
+    .section:last-child { margin-bottom: 0; }
+    .exp-entry { margin-bottom: 5pt; page-break-inside: avoid; }
+    .exp-list { padding-left: 12pt; }
+    .exp-entry::before { left: -12pt; }
+    .edu-grid { page-break-inside: avoid; row-gap: 2pt; }
+    .header { margin-bottom: auto; padding-bottom: 8pt; }
+    .header h1 { font-size: 21pt; margin-bottom: 1pt; }
+    .header .subtitle { font-size: 9.5pt; margin-bottom: 5pt; letter-spacing: 1.8pt; }
+
+    .summary-body { padding: 4pt 8pt; }
+    .summary-body p { font-size: 9pt; line-height: 1.45; }
+    .section-title { margin-bottom: 5pt; padding-bottom: 2pt; }
+    .skills-grid { gap: 3pt; }
+    .skill-pill { font-size: 7pt; padding: 1.5pt 5pt; }
+    .skill-cat { font-size: 7.5pt; min-width: 85pt; }
+    .exp-role { font-size: 9pt; }
+    .exp-bullets li { font-size: 8.5pt; line-height: 1.35; margin-bottom: 1pt; }
+    .exp-org { font-size: 8pt; margin-bottom: 1pt; }
+    .exp-date { font-size: 6.5pt; padding: 1pt 5pt; }
+    .contact-chip { font-size: 7pt; padding: 1.5pt 5pt; }
+    .contact-row { gap: 5pt; }
+    .cert { margin-top: 3pt; padding-top: 2pt; font-size: 7.5pt; }
+    .edu-year { font-size: 6.5pt; padding: 1pt 5pt; }
+
+    a { color: var(--primary-mid) !important; text-decoration: none !important; }
+
+    .contact-chip {
+      background: transparent !important;
+      border-color: var(--border) !important;
+    }
+
+    .skill-pill {
+      background: var(--border-light) !important;
+      border-color: var(--border) !important;
+    }
+
+    .exp-date, .edu-year {
+      background: var(--date-bg) !important;
+      border-color: var(--date-border) !important;
+    }
+
+    .summary-body {
+      background: var(--summary-bg) !important;
+      border-left-color: var(--accent) !important;
+    }
+
+    .exp-list::before {
+      background: var(--border) !important;
+    }
+  }
+
+  @media screen {
+    .page { border-radius: 3px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="header">
+    <h1>Sungur Zahid Erdim</h1>
+    <div class="subtitle">Yazılım Mühendisi</div>
+    <div class="contact-row">
+      <a class="contact-chip" href="https://linkedin.com/in/sungurerdim" target="_blank">linkedin.com/in/sungurerdim</a>
+      <a class="contact-chip" href="https://github.com/sungurerdim" target="_blank">github.com/sungurerdim</a>
+      <span class="contact-chip">Uzaktan - Türkiye (UTC+3)</span>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="section-title">Profesyonel Özet</div>
+    <div class="summary-body">
+      <p>On yılı aşkın deneyime sahip yazılım mühendisi. Verimsiz süreçleri tespit edip otomasyonla kalıcı çözümlere dönüştürür (üretimde <strong>700 kata</strong> kadar hızlanma). Fintech, havacılık ve Web3 alanlarında otomasyon sistemleri, yapay zeka araçları ve geliştirici altyapıları tasarladı. Bilgi güvenliği mühendisliği yüksek lisans mezunu.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-title">Teknik Beceriler</div>
+    <div class="skills-grid">
+      <div class="skill-row">
+        <span class="skill-cat">Diller</span>
+        <div class="skill-items">
+          <span class="skill-pill">Python</span>
+          <span class="skill-pill">Go</span>
+          <span class="skill-pill">Dart</span>
+          <span class="skill-pill">Bash</span>
+          <span class="skill-pill">SQL</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <span class="skill-cat">YZ &amp; Otomasyon</span>
+        <div class="skill-items">
+          <span class="skill-pill">LLM Araçları</span>
+          <span class="skill-pill">YZ Ajan Frameworkleri</span>
+          <span class="skill-pill">TensorRT</span>
+          <span class="skill-pill">Whisper / STT</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <span class="skill-cat">Mobil &amp; Web</span>
+        <div class="skill-items">
+          <span class="skill-pill">Flutter</span>
+          <span class="skill-pill">FastAPI</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <span class="skill-cat">DevOps</span>
+        <div class="skill-items">
+          <span class="skill-pill">Docker</span>
+          <span class="skill-pill">CI / CD</span>
+          <span class="skill-pill">Linux</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <span class="skill-cat">Alan</span>
+        <div class="skill-items">
+          <span class="skill-pill">Blockchain / Web3</span>
+          <span class="skill-pill">Süreç Otomasyonu</span>
+          <span class="skill-pill">Bilgi Güvenliği</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-title">Deneyim</div>
+    <div class="exp-list">
+
+      <div class="exp-entry">
+        <div class="exp-meta">
+          <span class="exp-role">Bağımsız Yazılım Mühendisi</span>
+          <span class="exp-date">Nis 2025 - Devam</span>
+        </div>
+        <div class="exp-org">Uzaktan</div>
+        <ul class="exp-bullets">
+          <li>Go, Python ve Flutter ile açık kaynak geliştirici araçları, yapay zeka ajan frameworkleri ve mobil uygulamalar geliştiriyor</li>
+          <li><strong>SafeScribeAI</strong> (<strong><a href="https://safescribe.dev" target="_blank" style="color:inherit">safescribe.dev</a></strong>)'ı tek başına kurdu ve geliştirdi: gizlilik odaklı transkripsiyon uygulaması - ses verisi yalnızca RAM'de işlenir, GDPR uyumlu, bulut bağımlılığı sıfır</li>
+          <li><strong>dev-skills</strong> frameworkünü oluşturdu: yapay zeka kodlama asistanları için araç bağımsız, üretime hazır beceri altyapısı</li>
+        </ul>
+      </div>
+
+      <div class="exp-entry">
+        <div class="exp-meta">
+          <span class="exp-role">Optimizasyon Yöneticisi</span>
+          <span class="exp-date">Nis 2024 - Mar 2025</span>
+        </div>
+        <div class="exp-org">Seedify - Web3 Launchpad</div>
+        <ul class="exp-bullets">
+          <li>Tüm departmanların optimizasyonunu tek başına üstlendi; iş akışlarını analiz edip her birime özel otomasyon çözümleri geliştirdi</li>
+          <li>X (Twitter) üzerinde influencer takibi yapan Python scraper geliştirdi, veri toplamayı <strong>16 kat</strong> hızlandırarak aylık 128 saatlik manuel işi 8 saate indirdi</li>
+          <li>Telegram botu ile içerik moderasyonunu otomatikleştirdi; yöneticilere tek tıkla hazır rapor sundu</li>
+          <li>Google Sheets, Calendar ve Slack API'lerini birleştirerek ekipler arası anlık koordinasyon sistemi kurdu</li>
+        </ul>
+      </div>
+
+      <div class="exp-entry">
+        <div class="exp-meta">
+          <span class="exp-role">Blokzinciri Otomasyon Uzmanı - Proje Yöneticisi</span>
+          <span class="exp-date">Kas 2022 - Kas 2023</span>
+        </div>
+        <div class="exp-org">Seedify</div>
+        <ul class="exp-bullets">
+          <li>Blokzinciri snapshot sürecini sıfırdan tasarlayarak tek ağdaki işlem süresini 21+ saatten 2 dakikanın altına indirdi <strong>(700 kat)</strong></li>
+          <li>Sistemi üç blokzinciri ağına ölçeklendirdi; tümü toplam 10 dakikanın altında tamamlanıyor</li>
+        </ul>
+      </div>
+
+      <div class="exp-entry">
+        <div class="exp-meta">
+          <span class="exp-role">Yönetim Kurulu Üyesi &amp; Müdür</span>
+          <span class="exp-date">Oca 2021 - Devam</span>
+        </div>
+        <div class="exp-org">Danışmanlık Merkezi</div>
+        <ul class="exp-bullets">
+          <li>Danışmanlık merkezini sıfırdan kurdu; operasyon, mevzuat uyumu ve stratejik yönetimi üstlendi</li>
+        </ul>
+      </div>
+
+      <div class="exp-entry">
+        <div class="exp-meta">
+          <span class="exp-role">Yazılım Geliştirici</span>
+          <span class="exp-date">Ağu 2018 - Oca 2020</span>
+        </div>
+        <div class="exp-org">EtherGem - Blokzinciri Projesi</div>
+        <ul class="exp-bullets">
+          <li>250'den fazla VPS'i yöneten Docker ve Bash tabanlı otomasyon sistemi kurdu: node dağıtımı, izleme ve otomatik güncelleme</li>
+        </ul>
+      </div>
+
+      <div class="exp-entry">
+        <div class="exp-meta">
+          <span class="exp-role">Süreç İyileştirme Uzmanı</span>
+          <span class="exp-date">Nis 2017 - Nis 2018</span>
+        </div>
+        <div class="exp-org">Albaraka Türk - Katılım Bankacılığı</div>
+        <ul class="exp-bullets">
+          <li>Saatler süren finansal hesaplama süreçlerini otomatikleştirdi; tek tıkla tekrar çalıştırılabilir hale getirerek süreyi 30 dakikanın altına indirdi</li>
+        </ul>
+      </div>
+
+      <div class="exp-entry">
+        <div class="exp-meta">
+          <span class="exp-role">Uzman &amp; Kalite Delegesi</span>
+          <span class="exp-date">Ağu 2014 - Mar 2017</span>
+        </div>
+        <div class="exp-org">Türk Hava Yolları - İkram ve Uçak İçi Ürünler</div>
+        <ul class="exp-bullets">
+          <li>Word/Excel belge işleme otomasyonu geliştirerek doküman başına süreyi 1 saatten 20 saniyeye düşürdü <strong>(180 kat)</strong></li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-title">Eğitim</div>
+    <div class="edu-grid">
+      <div class="edu-info">
+        <span class="edu-degree">Bilgi Güvenliği Mühendisliği, Yüksek Lisans</span>
+        <span class="edu-sep">-</span>
+        <span class="edu-school">İstanbul Şehir Üniversitesi</span>
+      </div>
+      <span class="edu-year">2017</span>
+
+      <div class="edu-info">
+        <span class="edu-degree">İşletme, Lisans</span>
+        <span class="edu-sep">-</span>
+        <span class="edu-school">İstanbul Üniversitesi</span>
+      </div>
+      <span class="edu-year">2011</span>
+    </div>
+    <div class="cert">Certified ScrumMaster (CSM) - Scrum Alliance (2023-2025)</div>
+  </section>
+
+</div>
+</body>
+</html>
