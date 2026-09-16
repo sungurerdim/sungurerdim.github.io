@@ -529,7 +529,7 @@
         <div class="exp-org">Uzaktan</div>
         <ul class="exp-bullets">
           <li>Açık kaynak geliştirici araçları, yapay zeka ajan altyapıları ve mobil uygulamalar tasarlayıp teslim ediyor - mimari, gereklilik belirleme ve uçtan uca teslim; Go, Python, Rust ve Flutter tarafında yapay zeka destekli uygulama</li>
-          <li><strong>SafeScribe</strong>'ı tek başına kurdu ve geliştirdi: tamamen cihaz üstü çalışan, konuşmacı ayrımlı transkripsiyon uygulaması - ses cihazdan hiç çıkmaz; sunucu yok, hesap yok, telemetri yok. Sunucu üstünde Docker Compose ile başladı, yayına çıkmadan önce gizlilik ve işletme maliyeti gerekçesiyle sunucuyu tamamen ortadan kaldıracak şekilde cihaz içine taşındı. ASR hattını uçtan uca ayarladı: kendi ses kayıtları üzerinde kelime hata oranı (WER) ölçümüyle parametre optimizasyonu ve patlayan seslerden aşırı boğuk kayıtlara kadar transkripsiyon kalitesini bozan unsurları tek tek tespit ederek kurulan ses ön işleme zinciri (normalizasyon, tiz yükseltme, gürültü azaltma ve diğer düzeltmeler)</li>
+          <li><strong>SafeScribe</strong>'ı tek başına kurdu ve geliştirdi: tamamen cihaz üstü çalışan, konuşmacı ayrımlı transkripsiyon uygulaması - ses cihazdan hiç çıkmaz; sunucu yok, hesap yok, telemetri yok. Sunucu üstünde Docker Compose ile başladı, yayına çıkmadan önce cihaz içine taşındı. Kelime hata oranı (WER) ölçümüyle Whisper parametre optimizasyonu; bozuk kayıtlar için ses ön işleme zinciri (normalizasyon, tiz yükseltme, gürültü azaltma)</li>
           <li><strong>dev-skills</strong> ve <strong>dev-rules</strong>'u oluşturdu: yapay zeka kodlama asistanları için araç bağımsız beceri altyapısı ve davranış kuralları (Claude Code, Cursor, Copilot ve diğerleri)</li>
           <li>Geliştirme aşamasında - <strong>dizgin</strong>: yapay zeka kodlama araçları için container'sız, platform-yerlisi sandbox - macOS Seatbelt, Linux bubblewrap ve Windows kısıtlı token'larıyla gerçek işletim sistemi izolasyonu</li>
         </ul>
@@ -601,7 +601,7 @@
         </div>
         <div class="exp-org">Türk Hava Yolları - İkram ve Uçak İçi Ürünler</div>
         <ul class="exp-bullets">
-          <li>Doküman Yönetimi Müdürlüğü'nün imla ve sayfa düzeni standartlarını (font, paragraf ayarları, başlık hiyerarşisi, numaralandırma) Word/VBA aracına kodladı; prosedür ve talimatların uyumlu hale getirilmesini danışmanlığa bağımlı olmaktan çıkarıp self-servis yaptı - kural setini bilmeyen müdürlükler yönlendirilecek muhatap bulamadığından e-posta trafiğinde 2 yıla varan bekleme süreleri yaşanıyordu. Standardın sahibi müdürlük aracı benimsedi, ilave iyileştirmeler talep etti ve duyuruyla tüm kalite delegelerinin dokümanlarını bu araçtan geçirerek iletmesini zorunlu kıldı. Doküman başına süreyi 1 saatten 20 saniyeye indirdi <strong>(180 kat)</strong></li>
+          <li>Doküman Yönetimi Müdürlüğü'nün imla ve sayfa düzeni standartlarını (font, paragraf ayarları, başlık hiyerarşisi, numaralandırma) Word/VBA aracına kodladı; vaka bazlı yönlendirmeyi self-servis bir akışla değiştirdi. Standardın sahibi müdürlük aracı benimsedi ve tüm kalite delegeleri için zorunlu kıldı. Doküman başına süreyi 1 saatten 20 saniyeye indirdi <strong>(180 kat)</strong></li>
           <li>İkram müdürlüğüne yönlendirilen kabin kaynaklı yolcu şikayetlerini sınıflandıran VBA kural motoru geliştirdi - şikayet metni, uçuş numarası, istasyon ve onlarca kritere dayalı bileşik koşullarla ilgili müdürlüğe yönlendirme, türetilebilir alanların otomatik doldurulması, tarihe göre sıralama</li>
         </ul>
       </div>
